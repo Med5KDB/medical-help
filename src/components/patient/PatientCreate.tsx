@@ -45,7 +45,7 @@ export const PatientCreate = () => (
             label="Situation matrimoniale"
             validate={[required()]}
             choices={[
-              { id: "SINGLED", name: "Célibataire" },
+              { id: "SINGLE", name: "Célibataire" },
               { id: "MARIED", name: "Marié(e)" },
               { id: "DIVORCED", name: "Divorcé(e)" },
               { id: "WIDOWED", name: "Veuf/Veuve" },
@@ -69,6 +69,15 @@ export const PatientCreate = () => (
         <Grid item xs={4}>
           <DateInput source="birthDate" validate={[required()]} />
         </Grid>
+      </Grid>
+      <Grid item xs={4}>
+        <TextInput
+          source="phoneNumber"
+          label="Numéro de téléphone"
+          validate={[required()]}
+          type="phone"
+          fullWidth
+        />
       </Grid>
     </SimpleForm>
   </Create>

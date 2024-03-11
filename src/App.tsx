@@ -9,6 +9,8 @@ import { dataProvider } from "./dataProvider";
 import { authProvider } from "./authProvider";
 import { DoctorList } from "./components/doctor/DoctorList";
 import { DoctorCreate } from "./components/doctor/DoctorCreate";
+import { PatientList } from "./components/patient/PatientList";
+import { PatientCreate } from "./components/patient/PatientCreate";
 
 export const App = () => (
   <Admin dataProvider={dataProvider} authProvider={authProvider}>
@@ -30,9 +32,10 @@ export const App = () => (
     <Resource
       name="patient"
       options={{ label: "Patient" }}
-      list={ListGuesser}
+      list={PatientList}
       edit={EditGuesser}
       show={ShowGuesser}
+      create={PatientCreate}
     />
     <Resource
       name="medecine"
