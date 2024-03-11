@@ -48,7 +48,7 @@ export const DoctorCreate = () => (
           />
         </Grid>
 
-        <Grid item xs={4}>
+        {/* <Grid item xs={4}>
           <SelectInput
             source="sexe"
             choices={[
@@ -59,7 +59,7 @@ export const DoctorCreate = () => (
             validate={[required()]}
             fullWidth
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </SimpleForm>
   </Create>
