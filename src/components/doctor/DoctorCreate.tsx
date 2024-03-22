@@ -37,7 +37,13 @@ export const DoctorCreate = () => (
           />
         </Grid>
         <Grid item xs={4}>
-          <TextInput source="email" type="email" label="Email" fullWidth validate={email()}/>
+          <TextInput
+            source="email"
+            type="email"
+            label="Email"
+            fullWidth
+            validate={email()}
+          />
         </Grid>
         <Grid item xs={4}>
           <TextInput
@@ -60,6 +66,14 @@ export const DoctorCreate = () => (
             fullWidth
           />
         </Grid> */}
+        <Grid item xs={4}>
+          <TextInput
+            source="password"
+            type="password"
+            validate={[required()]}
+            fullWidth
+          />
+        </Grid>
       </Grid>
     </SimpleForm>
   </Create>

@@ -75,7 +75,6 @@ export const PatientCreate = () => (
           source="phoneNumber"
           label="Numéro de téléphone"
           validate={[required()]}
-          type="phone"
           fullWidth
         />
       </Grid>
