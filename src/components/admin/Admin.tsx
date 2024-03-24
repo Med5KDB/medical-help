@@ -9,6 +9,8 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MasksIcon from "@mui/icons-material/Masks";
 import { AdminLayout } from "./AdminLayout";
 import { ThemeOptions, Theme } from "@mui/material";
+import { DocList } from "../doctor/DocList";
+import { i18nProvider } from "../../providers/i18nprovider";
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -27,6 +29,10 @@ const App = () => {
     },
     typography: {
       fontFamily: ["Poppins"].join(","),
+      fontWeightLight: 400,
+      fontWeightRegular: 500,
+      fontWeightMedium: 600,
+      fontWeightBold: 700,
     },
     components: {
       MuiDrawer: {
@@ -117,6 +123,7 @@ const App = () => {
       authProvider={authProvider}
       layout={AdminLayout}
       theme={theme}
+      i18nProvider={i18nProvider}
     >
       {/* <Resource
         name="admin"
@@ -128,7 +135,7 @@ const App = () => {
       <Resource
         name="doctor"
         options={{ label: "Docteur" }}
-        list={DoctorList}
+        list={DocList}
         edit={EditGuesser}
         show={ShowGuesser}
         create={DoctorCreate}
