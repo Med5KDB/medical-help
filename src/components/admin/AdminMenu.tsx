@@ -23,6 +23,7 @@ export const AdminMenu = () => {
         <Menu.DashboardItem leftIcon={<GridViewIcon />} />
         <MedicalHelpResourceItem name="doctor" />
         <MedicalHelpResourceItem name="patient" />
+        <MedicalHelpResourceItem name="medical-assistant" />
         <Divider />
       </Stack>
     </Menu>

@@ -1,4 +1,4 @@
-import { Admin, Resource, ShowGuesser } from "react-admin";
+import { Admin, EditGuesser,  Resource, ShowGuesser } from "react-admin";
 import { PatientList } from "../patient/PatientList";
 import { PatientCreate } from "../patient/PatientCreate";
 import { dataProvider } from "../../providers/dataProvider";
@@ -12,6 +12,10 @@ import { ThemeOptions, Theme, tableCellClasses } from "@mui/material";
 import { i18nProvider } from "../../providers/i18nprovider";
 import DoctorEdit from "../doctor/DoctorEdit";
 import PatientEdit from "../patient/PatientEdit";
+import MedicalAssistantList from "../medical-assistant/MedicalAssistantList";
+import MedicalAssistantCreate from "../medical-assistant/MedicalAssistantCreate";
+import MedicalAssistantEdit from "../medical-assistant/MedicalAssistantEdit";
+import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -278,6 +282,15 @@ const App = () => {
         edit={EditGuesser}
         show={ShowGuesser}
       /> */}
+      <Resource
+        name="medical-assistant"
+        options={{ label: "Assistant médical" }}
+        list={MedicalAssistantList}
+        edit={MedicalAssistantEdit}
+        show={ShowGuesser}
+        create={MedicalAssistantCreate}
+        icon={SupervisorAccountIcon}
+      />
     </Admin>
   );
 };
