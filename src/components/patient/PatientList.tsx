@@ -1,9 +1,9 @@
 import { Datagrid, List, TextField } from "react-admin";
+import ListRecordActions from "../../common/ListRecordActions";
 
 export const PatientList = () => (
   <List>
-    <Datagrid rowClick="edit">
-      <TextField source="id" label="ID" />
+    <Datagrid rowClick="show">
       <TextField source="firstname" label="Prénom" />
       <TextField source="lastname" label="Nom" />
       <TextField source="birthDate" label="Date de naissance" />
@@ -11,6 +11,7 @@ export const PatientList = () => (
       <TextField source="phoneNumber" label="Numéro de téléphone" />
       <TextField source="occupation" label="Profession" />
       <TextField source="maritalStatus" label="Situation matrimoniale" />
+      <ListRecordActions />
     </Datagrid>
   </List>
 );

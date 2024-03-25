@@ -1,4 +1,4 @@
-import { Admin, EditGuesser, Resource, ShowGuesser } from "react-admin";
+import { Admin, Resource, ShowGuesser } from "react-admin";
 import { PatientList } from "../patient/PatientList";
 import { PatientCreate } from "../patient/PatientCreate";
 import { dataProvider } from "../../providers/dataProvider";
@@ -10,6 +10,8 @@ import MasksIcon from "@mui/icons-material/Masks";
 import { AdminLayout } from "./AdminLayout";
 import { ThemeOptions, Theme, tableCellClasses } from "@mui/material";
 import { i18nProvider } from "../../providers/i18nprovider";
+import DoctorEdit from "../doctor/DoctorEdit";
+import PatientEdit from "../patient/PatientEdit";
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -242,19 +244,25 @@ const App = () => {
         name="doctor"
         options={{ label: "Docteur" }}
         list={DoctorList}
-        edit={EditGuesser}
+        edit={DoctorEdit}
         show={ShowGuesser}
         create={DoctorCreate}
         icon={AccountCircleIcon}
+        recordRepresentation={(record) =>
+          `${record.firstName} ${record.lastName}`
+        }
       />
       <Resource
         name="patient"
         options={{ label: "Patient" }}
         list={PatientList}
-        edit={EditGuesser}
+        edit={PatientEdit}
         show={ShowGuesser}
         create={PatientCreate}
         icon={MasksIcon}
+        recordRepresentation={(record) =>
+          `${record.firstName} ${record.lastName}`
+        }
       />
       {/* <Resource
         name="medecine"

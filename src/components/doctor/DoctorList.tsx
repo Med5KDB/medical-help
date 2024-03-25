@@ -6,23 +6,21 @@ import {
   SearchInput,
   TextField,
 } from "react-admin";
+import ListRecordActions from "../../common/ListRecordActions";
 
 const doctorFilters = [
   <SearchInput key="search" source="firstName,lastName" alwaysOn />,
 ];
 export const DoctorList = (props: ListProps) => (
-  <List
-    {...props}
-    filters={doctorFilters}
-    resource="doctor"
-  >
-    <Datagrid rowClick="edit">
+  <List {...props} filters={doctorFilters} resource="doctor">
+    <Datagrid rowClick="show">
       <TextField source="username" label="Nom d'utilisateur" />
       <TextField source="firstname" label="Prénom" />
       <TextField source="lastname" label="Nom" />
-      <EmailField source="email" label="E-mail"/>
+      <EmailField source="email" label="E-mail" />
       <TextField source="phoneNumber" label="Numéro de téléphone" />
       <TextField source="speciality" label="Spécialité" />
+      <ListRecordActions />
     </Datagrid>
   </List>
 );
