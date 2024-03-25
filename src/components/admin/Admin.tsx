@@ -8,8 +8,7 @@ import { DoctorCreate } from "../doctor/DoctorCreate";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MasksIcon from "@mui/icons-material/Masks";
 import { AdminLayout } from "./AdminLayout";
-import { ThemeOptions, Theme } from "@mui/material";
-import { DocList } from "../doctor/DocList";
+import { ThemeOptions, Theme, tableCellClasses } from "@mui/material";
 import { i18nProvider } from "../../providers/i18nprovider";
 
 const App = () => {
@@ -115,6 +114,113 @@ const App = () => {
           }),
         },
       },
+      MuiTable: {
+        styleOverrides: {
+          root: () => ({
+            borderCollapse: "separate",
+            borderSpacing: "0px 9px",
+          }),
+        },
+      },
+      MuiTableRow: {
+        styleOverrides: {
+          root: {
+            "&.Mui-selected": {
+              "&.MuiTableRow-selected": {
+                "&:selected": {
+                  backgroundColor: "black",
+                },
+              },
+            },
+          },
+        },
+      },
+      MuiPaper: {
+        styleOverrides: {
+          root: {
+            "&.RaList-content": {
+              "box-shadow": "none !important",
+            },
+          },
+        },
+      },
+      MuiTabs: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            backgroundColor: theme.palette.info.main,
+            borderRadius: "25px !important",
+            padding: `${theme.spacing(0.75)} ${theme.spacing(1)}`,
+            minHeight: "38px !important",
+          }),
+        },
+        defaultProps: {
+          TabIndicatorProps: {
+            sx: {
+              display: "none",
+            },
+          },
+        },
+      },
+
+      MuiTab: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            "&:first-of-type": {
+              borderTopLeftRadius: "25px !important",
+              borderBottomLeftRadius: "25px !important",
+            },
+            "&.Mui-selected": {
+              backgroundColor: theme.palette.primary.main,
+              color: theme.palette.primary.contrastText,
+              borderRadius: "25px !important",
+            },
+            padding: `${theme.spacing(1)} ${theme.spacing(6)}`,
+            minHeight: "38px !important",
+          }),
+        },
+      },
+
+      MuiTableCell: {
+        styleOverrides: {
+          body: () => ({
+            borderTop: "1px solid #F1F1F1 !important",
+            borderBottom: "1px solid #F1F1F1 !important",
+            "&:first-of-type": {
+              borderTopLeftRadius: 15,
+              borderBottomLeftRadius: 15,
+              borderLeft: "1px solid #F1F1F1 !important",
+            },
+            "&:last-child": {
+              borderTopRightRadius: 15,
+              borderBottomRightRadius: 15,
+              borderRight: "1px solid #F1F1F1 !important",
+            },
+          }),
+          head: ({ theme }) => ({
+            "&:first-of-type": {
+              borderTopLeftRadius: "15px !important",
+              borderBottomLeftRadius: "15px !important",
+            },
+            "&:last-child": {
+              borderTopRightRadius: "15px !important",
+              borderBottomRightRadius: "15px !important",
+            },
+            fontWeight: "600",
+            borderWidth: 0,
+            backgroundColor: theme.palette.info.main,
+            color: theme.palette.info.contrastText,
+          }),
+          root: ({ theme }) => ({
+            [`&.${tableCellClasses.head}`]: {
+              backgroundColor: theme.palette.info.main,
+              color: theme.palette.info.contrastText,
+            },
+            [`&.${tableCellClasses.body}`]: {
+              fontSize: 14,
+            },
+          }),
+        },
+      },
     },
   };
   return (
@@ -135,7 +241,7 @@ const App = () => {
       <Resource
         name="doctor"
         options={{ label: "Docteur" }}
-        list={DocList}
+        list={DoctorList}
         edit={EditGuesser}
         show={ShowGuesser}
         create={DoctorCreate}

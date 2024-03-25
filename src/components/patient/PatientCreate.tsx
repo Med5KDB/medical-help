@@ -9,7 +9,7 @@ import {
 import { Grid } from "@mui/material";
 
 export const PatientCreate = () => (
-  <Create title="Créer un docteur">
+  <Create title="Créer un patient">
     <SimpleForm>
       <Grid container columnSpacing={2}>
         <Grid item xs={12} sm={4}>
