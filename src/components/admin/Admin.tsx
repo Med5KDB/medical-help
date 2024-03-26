@@ -1,4 +1,4 @@
-import { Admin, EditGuesser,  Resource, ShowGuesser } from "react-admin";
+import { Admin, EditGuesser, Resource, ShowGuesser } from "react-admin";
 import { PatientList } from "../patient/PatientList";
 import { PatientCreate } from "../patient/PatientCreate";
 import { dataProvider } from "../../providers/dataProvider";
@@ -15,7 +15,13 @@ import PatientEdit from "../patient/PatientEdit";
 import MedicalAssistantList from "../medical-assistant/MedicalAssistantList";
 import MedicalAssistantCreate from "../medical-assistant/MedicalAssistantCreate";
 import MedicalAssistantEdit from "../medical-assistant/MedicalAssistantEdit";
-import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
+import { hospitalList } from "../Hospital/HospitalList";
+import { HospitalCreate } from "../Hospital/HospitalCreate";
+import { HospitalEdit } from "../Hospital/HospitalEdit";
+import { MedicinetList } from "../Medicine/MedicineList";
+import { MedicineEdit } from "../Medicine/MedicineEdit";
+import { MedicineCreate } from "../Medicine/MedicineCreate";
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -268,20 +274,24 @@ const App = () => {
           `${record.firstName} ${record.lastName}`
         }
       />
-      {/* <Resource
-        name="medecine"
+      <Resource
+        name="medicine"
         options={{ label: "Médicaments" }}
-        list={ListGuesser}
-        edit={EditGuesser}
+        list={MedicinetList}
+        edit={MedicineEdit}
         show={ShowGuesser}
+        create={MedicineCreate}
+        // icon={LocalPharmacyIcon}
+        // recordRepresentation={(record) => `${record.name}`}
       />
       <Resource
         name="hospital"
         options={{ label: "Hopital" }}
-        list={ListGuesser}
-        edit={EditGuesser}
+        list={hospitalList}
+        edit={HospitalEdit}
+        create={HospitalCreate}
         show={ShowGuesser}
-      /> */}
+      />
       <Resource
         name="medical-assistant"
         options={{ label: "Assistant médical" }}
