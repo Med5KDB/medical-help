@@ -1,8 +1,8 @@
-import { Edit } from "react-admin";
+import { Edit, EditProps } from "react-admin";
 import { MedicineForm } from "./MedicineForm";
 
-export const MedicineEdit = () => (
-  <Edit title="Modifier  un medicament ">
+export const MedicineEdit = (props: EditProps) => (
+  <Edit title="Modifier  un medicament " {...props}>
     <MedicineForm />
   </Edit>
 );

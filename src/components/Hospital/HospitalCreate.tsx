@@ -1,8 +1,8 @@
-import { Create } from "react-admin";
+import { Create, CreateProps } from "react-admin";
 import { HospitalForm } from "./HospitalForm";
 
-export const HospitalCreate = () => (
-  <Create title="Créer un Hopital">
+export const HospitalCreate = (props: CreateProps) => (
+  <Create title="Créer un Hopital" {...props}>
     <HospitalForm />
   </Create>
 );
