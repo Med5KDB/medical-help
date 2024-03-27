@@ -1,8 +1,8 @@
 import DoctorForm from "./DoctorForm";
-import { Edit } from "react-admin";
+import { Edit, EditProps } from "react-admin";
 
-const DoctorEdit = () => (
-  <Edit title="Modifier un docteur">
+const DoctorEdit = (props: EditProps) => (
+  <Edit title="Modifier un docteur" {...props} redirect="show">
     <DoctorForm />
   </Edit>
 );

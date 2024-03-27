@@ -1,7 +1,4 @@
 import {
-  DateInput,
-  NumberInput,
-  SelectInput,
   SimpleForm,
   TextInput,
   required,
@@ -38,7 +35,7 @@ export const HospitalForm = () => (
         />
       </Grid>
       <Grid item xs={12} sm={8}>
-        <NumberInput
+        <TextInput
           source="phoneNumber"
           label="Numéro du téléphone"
           validate={[required()]}

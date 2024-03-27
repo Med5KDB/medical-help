@@ -3,7 +3,7 @@ import MedicalAssistantForm from "./MedicalAssistantForm";
 
 const MedicalAssistantCreate = (props: CreateProps) => {
   return (
-    <Create {...props} title="Créer un assistant médical">
+    <Create {...props} title="Créer un assistant médical" redirect="show">
       <MedicalAssistantForm />
     </Create>
   );

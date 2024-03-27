@@ -1,8 +1,8 @@
-import { Create } from "react-admin";
+import { Create, CreateProps } from "react-admin";
 import PatientForm from "./PatientForm";
 
-export const PatientCreate = () => (
-  <Create title="Créer un patient">
+export const PatientCreate = (props: CreateProps) => (
+  <Create {...props} title="Créer un patient" redirect="show">
     <PatientForm />
   </Create>
 );
