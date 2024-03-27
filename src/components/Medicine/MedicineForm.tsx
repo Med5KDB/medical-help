@@ -15,7 +15,7 @@ export const MedicineForm = () => (
       <Grid item xs={12} sm={8}>
         <TextInput
           source="name"
-          label="Nom du Medicament"
+          label="Nom du Médicament"
           validate={[required()]}
           fullWidth
           size="medium"

@@ -22,6 +22,8 @@ import { HospitalEdit } from "../Hospital/HospitalEdit";
 import { MedicinetList } from "../Medicine/MedicineList";
 import { MedicineEdit } from "../Medicine/MedicineEdit";
 import { MedicineCreate } from "../Medicine/MedicineCreate";
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+import MedicationIcon from '@mui/icons-material/Medication';
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -259,7 +261,7 @@ const App = () => {
         create={DoctorCreate}
         icon={AccountCircleIcon}
         recordRepresentation={(record) =>
-          `${record.firstName} ${record.lastName}`
+          `${record.firstname} ${record.lastname}`
         }
       />
       <Resource
@@ -271,7 +273,7 @@ const App = () => {
         create={PatientCreate}
         icon={MasksIcon}
         recordRepresentation={(record) =>
-          `${record.firstName} ${record.lastName}`
+          `${record.firstname} ${record.lastname}`
         }
       />
       <Resource
@@ -281,8 +283,8 @@ const App = () => {
         edit={MedicineEdit}
         show={ShowGuesser}
         create={MedicineCreate}
-        // icon={LocalPharmacyIcon}
-        // recordRepresentation={(record) => `${record.name}`}
+        icon={MedicationIcon}
+        recordRepresentation={(record) => `${record.name}`}
       />
       <Resource
         name="hospital"
@@ -291,6 +293,8 @@ const App = () => {
         edit={HospitalEdit}
         create={HospitalCreate}
         show={ShowGuesser}
+        icon={LocalHospitalIcon}
+        recordRepresentation={(record) => `${record.name}`}
       />
       <Resource
         name="medical-assistant"
@@ -300,6 +304,7 @@ const App = () => {
         show={ShowGuesser}
         create={MedicalAssistantCreate}
         icon={SupervisorAccountIcon}
+        recordRepresentation={(record) => `${record.firstname} ${record.lastname}`}
       />
     </Admin>
   );
