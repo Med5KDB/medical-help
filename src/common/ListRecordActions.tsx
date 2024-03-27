@@ -4,7 +4,7 @@ const ListRecordActions = () => {
   return (
     <>
       <EditButton />
-      <DeleteWithConfirmButton confirmTitle="Supprimer" />
+      <DeleteWithConfirmButton confirmTitle="Supprimer" mutationMode="undoable" />
     </>
   );
 };
