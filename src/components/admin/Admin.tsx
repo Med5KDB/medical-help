@@ -54,7 +54,7 @@ const App = () => {
       MuiDrawer: {
         styleOverrides: {
           root: ({ theme }) => ({
-            backgroundColor: theme.palette.primary.main,
+            // backgroundColor: theme.palette.primary.main,
             height: "100vh !important",
             "& .MuiMenuItem-root": {
               color: theme.palette.primary.contrastText,

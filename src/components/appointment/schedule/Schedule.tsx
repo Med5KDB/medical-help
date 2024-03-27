@@ -38,7 +38,6 @@ const Schedule = () => {
       <ScheduleComponent
         locale="fr"
         eventSettings={eventSettings}
-        selectedDate={new Date(2024, 3, 28)}
         popupOpen={(args: PopupOpenEventArgs) => console.log(args)}
         renderCell={(args: RenderCellEventArgs) => console.log(args)}
         eventRendered={(args: EventRenderedArgs) => console.log(args)}
