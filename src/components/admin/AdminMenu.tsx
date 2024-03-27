@@ -1,6 +1,9 @@
 import { Menu } from "react-admin";
 import { Box, Divider, Stack } from "@mui/material";
-import { GridView as GridViewIcon } from "@mui/icons-material";
+import {
+  GridView as GridViewIcon,
+  Event as EventIcon,
+} from "@mui/icons-material";
 
 export const AdminMenu = () => {
   return (
@@ -26,8 +29,14 @@ export const AdminMenu = () => {
         <MedicalHelpResourceItem name="patient" />
         <MedicalHelpResourceItem name="medical-assistant" />
         <MedicalHelpResourceItem name="medicine" />
-
-        <Divider />
+        <Menu.Item
+          to={{
+            pathname: "/appointments",
+          }}
+          primaryText="Agenda"
+          leftIcon={<EventIcon />}
+        />
+        <Divider />        
       </Stack>
     </Menu>
   );

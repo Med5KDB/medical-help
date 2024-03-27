@@ -1,4 +1,4 @@
-import { Admin, EditGuesser, Resource, ShowGuesser } from "react-admin";
+import { Admin, CustomRoutes, EditGuesser,  Resource, ShowGuesser } from "react-admin";
 import { PatientList } from "../patient/PatientList";
 import { PatientCreate } from "../patient/PatientCreate";
 import { dataProvider } from "../../providers/dataProvider";
@@ -24,6 +24,9 @@ import { MedicineEdit } from "../Medicine/MedicineEdit";
 import { MedicineCreate } from "../Medicine/MedicineCreate";
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import MedicationIcon from '@mui/icons-material/Medication';
+import { Route } from "react-router-dom";
+import Schedule from "../appointment/schedule/Schedule";
+
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -306,6 +309,9 @@ const App = () => {
         icon={SupervisorAccountIcon}
         recordRepresentation={(record) => `${record.firstname} ${record.lastname}`}
       />
+      <CustomRoutes>
+        <Route path="/appointments" element={<Schedule />} />
+      </CustomRoutes>
     </Admin>
   );
 };
