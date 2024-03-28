@@ -1,4 +1,5 @@
 import {
+  PasswordInput,
   SelectInput,
   SimpleForm,
   TextInput,
@@ -6,16 +7,21 @@ import {
   required,
 } from "react-admin";
 import { Grid } from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import StarRateIcon from "@mui/icons-material/StarRate";
+import PersonIcon from "@mui/icons-material/Person";
+import EmailIcon from "@mui/icons-material/Email";
 const DoctorForm = () => {
   return (
     <SimpleForm>
-      <Grid container columnSpacing={2}>
-        <Grid item xs={12} sm={4}>
+      <Grid container columnSpacing={2} mt={2} pt={2} pb={2}>
+        <Grid item xs={12} sm={4} mb={2}>
           <TextInput
             source="firstname"
             label="Prénom"
             validate={[required()]}
             fullWidth
+            InputProps={{ endAdornment: <AccountCircleIcon /> }}
           />
         </Grid>
         <Grid item xs={4}>
@@ -24,6 +30,7 @@ const DoctorForm = () => {
             label="Nom"
             fullWidth
             validate={[required()]}
+            InputProps={{ endAdornment: <AccountCircleIcon /> }}
           />
         </Grid>
         <Grid item xs={4}>
@@ -32,6 +39,7 @@ const DoctorForm = () => {
             label="Nom d'utilisateur (Pseudo)"
             validate={[required()]}
             fullWidth
+            InputProps={{ endAdornment: <PersonIcon /> }}
           />
         </Grid>
         <Grid item xs={4}>
@@ -41,6 +49,7 @@ const DoctorForm = () => {
             label="Email"
             fullWidth
             validate={email()}
+            InputProps={{ endAdornment: <EmailIcon /> }}
           />
         </Grid>
         <Grid item xs={4}>
@@ -49,6 +58,7 @@ const DoctorForm = () => {
             label="Spécialité"
             validate={[required()]}
             fullWidth
+            InputProps={{ endAdornment: <StarRateIcon /> }}
           />
         </Grid>
 
@@ -65,12 +75,7 @@ const DoctorForm = () => {
           />
         </Grid> */}
         <Grid item xs={4}>
-          <TextInput
-            source="password"
-            type="password"
-            validate={[required()]}
-            fullWidth
-          />
+          <PasswordInput source="password" validate={[required()]} fullWidth />
         </Grid>
       </Grid>
     </SimpleForm>

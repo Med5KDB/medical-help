@@ -1,5 +1,7 @@
 import { SimpleForm, TextInput, required } from "react-admin";
 import { Grid } from "@mui/material";
+import HealingIcon from "@mui/icons-material/Healing";
+import ViewHeadlineIcon from "@mui/icons-material/ViewHeadline";
 
 export const MedicineForm = () => (
   <SimpleForm>
@@ -19,6 +21,7 @@ export const MedicineForm = () => (
           validate={[required()]}
           fullWidth
           size="medium"
+          InputProps={{ endAdornment: <HealingIcon /> }}
         />
       </Grid>
       <Grid item xs={12} sm={8}>
@@ -28,6 +31,7 @@ export const MedicineForm = () => (
           fullWidth
           size="medium"
           multiline
+          InputProps={{ endAdornment: <ViewHeadlineIcon /> }}
         />
       </Grid>
     </Grid>

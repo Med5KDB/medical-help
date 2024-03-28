@@ -6,17 +6,22 @@ import {
   required,
 } from "react-admin";
 import { Grid } from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import WorkIcon from "@mui/icons-material/Work";
+import PhoneIcon from "@mui/icons-material/Phone";
 
 const PatientForm = () => {
   return (
     <SimpleForm>
-      <Grid container columnSpacing={2}>
-        <Grid item xs={12} sm={4}>
+      <Grid container columnSpacing={2} mt={2} pt={2} pb={2}>
+        <Grid item xs={12} sm={4} mb={2}>
           <TextInput
             source="firstname"
             label="Prénom"
             validate={[required()]}
             fullWidth
+            InputProps={{ endAdornment: <AccountCircleIcon /> }}
           />
         </Grid>
         <Grid item xs={4}>
@@ -25,6 +30,7 @@ const PatientForm = () => {
             label="Nom"
             fullWidth
             validate={[required()]}
+            InputProps={{ endAdornment: <AccountCircleIcon /> }}
           />
         </Grid>
         <Grid item xs={4}>
@@ -33,10 +39,16 @@ const PatientForm = () => {
             label="Adresse"
             validate={[required()]}
             fullWidth
+            InputProps={{ endAdornment: <LocationOnIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
-          <TextInput source="occupation" label="Profession" fullWidth />
+        <Grid item xs={4} mb={3}>
+          <TextInput
+            source="occupation"
+            label="Profession"
+            fullWidth
+            InputProps={{ endAdornment: <WorkIcon /> }}
+          />
         </Grid>
         <Grid item xs={4}>
           <SelectInput
@@ -68,14 +80,15 @@ const PatientForm = () => {
         <Grid item xs={4}>
           <DateInput source="birthDate" validate={[required()]} />
         </Grid>
-      </Grid>
-      <Grid item xs={4}>
-        <TextInput
-          source="phoneNumber"
-          label="Numéro de téléphone"
-          validate={[required()]}
-          fullWidth
-        />
+        <Grid item xs={4}>
+          <TextInput
+            source="phoneNumber"
+            label="Numéro de téléphone"
+            validate={[required()]}
+            fullWidth
+            InputProps={{ endAdornment: <PhoneIcon /> }}
+          />
+        </Grid>
       </Grid>
     </SimpleForm>
   );
