@@ -68,6 +68,7 @@ const MedicalAssistantForm = () => {
         <Grid item xs={4}>
           <PasswordInput
             source="password"
+            label="Mot de passe"
             validate={[required()]}
             fullWidth
           />

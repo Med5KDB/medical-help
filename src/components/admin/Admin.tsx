@@ -288,7 +288,7 @@ const App = () => {
       />
       <Resource
         name="hospital"
-        options={{ label: "Hopital" }}
+        options={{ label: "Hôpital" }}
         list={hospitalList}
         edit={HospitalEdit}
         create={HospitalCreate}

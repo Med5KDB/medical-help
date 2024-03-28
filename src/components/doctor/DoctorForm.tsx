@@ -75,7 +75,7 @@ const DoctorForm = () => {
           />
         </Grid> */}
         <Grid item xs={4}>
-          <PasswordInput source="password" validate={[required()]} fullWidth />
+          <PasswordInput source="password" label="Mot de passe" validate={[required()]} fullWidth />
         </Grid>
       </Grid>
     </SimpleForm>

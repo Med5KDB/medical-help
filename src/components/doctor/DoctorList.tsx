@@ -23,8 +23,8 @@ export const DoctorList = (props: ListProps) => (
       <TextField source="speciality" label="Spécialité" />
       <ReferenceField
         source="hospitalId"
+        label="Hôpital"
         reference="hospital"
-        label="Hopital"
         link="show"
       >
         <TextField source="name" />
