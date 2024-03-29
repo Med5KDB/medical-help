@@ -1,6 +1,7 @@
 import {
   Datagrid,
   DateField,
+  FunctionField,
   List,
   ListProps,
   ReferenceField,
@@ -23,11 +24,18 @@ export const MedicalRecordList = (props?: ListProps) => {
             sx={{ mb: -0.5, mr: 0.5 }}
             fontSize="medium"
           />
-          {/* <ReferenceField
+          <ReferenceField
             source="patientId"
+            label="Patient"
             reference="patient"
-            label="patient"
-          /> */}
+            link="show"
+          >
+            <FunctionField<{ firstname: string; lastname: string }>
+              render={(record) =>
+                record && `${record.firstname} ${record.lastname}`
+              }
+            />
+          </ReferenceField>
         </HeaderLabel>
         <DateField source="createdAt" label="Date creation " />
         <DateField source="updatedAt " label="Date  modification" />
