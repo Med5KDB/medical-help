@@ -24,9 +24,9 @@ import { MedicineEdit } from "../Medicine/MedicineEdit";
 import { MedicineCreate } from "../Medicine/MedicineCreate";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import MedicationIcon from "@mui/icons-material/Medication";
-import { MedicalRecordList } from "../medicalRecord/MedicalRecordList";
-import MedicalRecordEdit from "../medicalRecord/MedicalRecordEdit";
 import { MedicalRecordCreate } from "../medicalRecord/MedicalRecordCreate";
+import { MedicalRecordEdit } from "../medicalRecord/MedicalRecordEdit";
+import { MedicalRecordList } from "../medicalRecord/MedicalRecordList";
 import FolderIcon from "@mui/icons-material/Folder";
 
 const App = () => {
