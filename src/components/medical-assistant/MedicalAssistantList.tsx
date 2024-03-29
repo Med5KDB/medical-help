@@ -25,7 +25,12 @@ const MedicalAssistantList = (props: ListProps) => (
       <TextField source="lastname" label="Nom" />
       <EmailField source="email" label="E-mail" />
       <TextField source="phoneNumber" label="Numéro de téléphone" />
-      <ReferenceField source="name" label="Docteur" reference="doctors" emptyText="Pas de docteur">
+      <ReferenceField
+        source="doctorId"
+        label="Docteur"
+        reference="doctor"
+        link="show"
+      >
         <FunctionField<{ firstname: string; lastname: string }>
           render={(record) =>
             record && `${record.firstname} ${record.lastname}`

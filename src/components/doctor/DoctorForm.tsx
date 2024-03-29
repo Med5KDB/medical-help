@@ -1,5 +1,7 @@
 import {
+  AutocompleteInput,
   PasswordInput,
+  ReferenceInput,
   SelectInput,
   SimpleForm,
   TextInput,
@@ -75,7 +77,21 @@ const DoctorForm = () => {
           />
         </Grid> */}
         <Grid item xs={4}>
-          <PasswordInput source="password" label="Mot de passe" validate={[required()]} fullWidth />
+          <PasswordInput
+            source="password"
+            label="Mot de passe"
+            // validate={[required()]}
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={12} sm={8}>
+          <ReferenceInput
+            source="hospitalId"
+            reference="hospital"
+            // validate={[required()]}
+          >
+            <AutocompleteInput label="Hospital" />
+          </ReferenceInput>
         </Grid>
       </Grid>
     </SimpleForm>
