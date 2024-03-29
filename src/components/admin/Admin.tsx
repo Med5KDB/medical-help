@@ -22,8 +22,12 @@ import { HospitalEdit } from "../Hospital/HospitalEdit";
 import { MedicinetList } from "../Medicine/MedicineList";
 import { MedicineEdit } from "../Medicine/MedicineEdit";
 import { MedicineCreate } from "../Medicine/MedicineCreate";
-import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import MedicationIcon from '@mui/icons-material/Medication';
+import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+import MedicationIcon from "@mui/icons-material/Medication";
+import { MedicalRecordList } from "../medicalRecord/MedicalRecordList";
+import MedicalRecordEdit from "../medicalRecord/MedicalRecordEdit";
+import { MedicalRecordCreate } from "../medicalRecord/MedicalRecordCreate";
+import FolderIcon from "@mui/icons-material/Folder";
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -304,7 +308,18 @@ const App = () => {
         show={ShowGuesser}
         create={MedicalAssistantCreate}
         icon={SupervisorAccountIcon}
-        recordRepresentation={(record) => `${record.firstname} ${record.lastname}`}
+        recordRepresentation={(record) =>
+          `${record.firstname} ${record.lastname}`
+        }
+      />
+      <Resource
+        name="medicalRecord"
+        options={{ label: "Dossiers Patients" }}
+        list={MedicalRecordList}
+        edit={MedicalRecordEdit}
+        show={ShowGuesser}
+        create={MedicalRecordCreate}
+        icon={FolderIcon}
       />
     </Admin>
   );

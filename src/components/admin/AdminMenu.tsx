@@ -26,6 +26,7 @@ export const AdminMenu = () => {
         <MedicalHelpResourceItem name="patient" />
         <MedicalHelpResourceItem name="medical-assistant" />
         <MedicalHelpResourceItem name="medicine" />
+        <MedicalHelpResourceItem name="medicalRecord" />
 
         <Divider />
       </Stack>
