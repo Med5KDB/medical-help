@@ -7,18 +7,31 @@ import {
   ListProps,
   ReferenceField,
 } from "react-admin";
+import AppointmentStatusChip from "./AppointmentStatusChip";
+import AppointmentTypeChip from "./AppointmentTypeChip";
 
 const AppointmentList = (props: ListProps) => {
   return (
     <List {...props} resource="appointment">
       <Datagrid rowClick="show">
         <DateField source="date" label="Date de rendez-vous" />
-        <ChipField source="status" label="Statut " color="warning" />
-        <ChipField
+        <FunctionField
+          source="status"
+          label="Statut"
+          render={(record) =>
+            record?.status ? (
+              <AppointmentStatusChip status={record.status} />
+            ) : null
+          }
+        />
+        <FunctionField
           source="appointmentType"
-          color="warning"
           label="Type de rendez-vous"
-          emptyText="pas défini"
+          render={(record) =>
+            record?.appointmentType ? (
+              <AppointmentTypeChip status={record.appointmentType} />
+            ) : null
+          }
         />
         <ReferenceField source="doctorId" label="Docteur" reference="doctor">
           <FunctionField<{ firstname: string; lastname: string }>

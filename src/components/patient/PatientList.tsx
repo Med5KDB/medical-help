@@ -1,5 +1,12 @@
-import { Datagrid, DateField, List, TextField } from "react-admin";
+import {
+  Datagrid,
+  DateField,
+  FunctionField,
+  List,
+  TextField,
+} from "react-admin";
 import ListRecordActions from "../../common/ListRecordActions";
+import MaritalStatusChip from "./MaritalStatusChip";
 
 export const PatientList = () => (
   <List>
@@ -10,7 +17,15 @@ export const PatientList = () => (
       <TextField source="address" label="Adresse" />
       <TextField source="phoneNumber" label="Numéro de téléphone" />
       <TextField source="occupation" label="Profession" />
-      <TextField source="maritalStatus" label="Situation matrimoniale" />
+      <FunctionField
+        source="maritalStatus"
+        label="Situation matrimoniale"
+        render={(record) =>
+          record?.maritalStatus ? (
+            <MaritalStatusChip status={record.maritalStatus} />
+          ) : null
+        }
+      />
       <ListRecordActions />
     </Datagrid>
   </List>
