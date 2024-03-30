@@ -1,5 +1,5 @@
-import React from "react";
 import {
+  ChipField,
   Datagrid,
   FunctionField,
   List,
@@ -12,8 +12,14 @@ const AppointmentList = (props: ListProps) => {
   return (
     <List {...props} resource="appointment">
       <Datagrid rowClick="show">
-        <TextField source="date" label="Date de RDV" />
-        <TextField source="status" label="Statut " />
+        <TextField source="date" label="Date de rendez-vous" />
+        <ChipField source="status" label="Statut " color="warning" />
+        <ChipField
+          source="appointmentType"
+          color="warning"
+          label="Type de rendez-vous"
+          emptyText="pas défini"
+        />
         <ReferenceField source="doctorId" label="Docteur" reference="doctor">
           <FunctionField<{ firstname: string; lastname: string }>
             render={(record) =>
