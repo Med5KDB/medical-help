@@ -1,4 +1,4 @@
-import { Admin, EditGuesser, Resource, ShowGuesser } from "react-admin";
+import { Admin, CustomRoutes, Resource, ShowGuesser } from "react-admin";
 import { PatientList } from "../patient/PatientList";
 import { PatientCreate } from "../patient/PatientCreate";
 import { dataProvider } from "../../providers/dataProvider";
@@ -22,8 +22,14 @@ import { HospitalEdit } from "../Hospital/HospitalEdit";
 import { MedicinetList } from "../Medicine/MedicineList";
 import { MedicineEdit } from "../Medicine/MedicineEdit";
 import { MedicineCreate } from "../Medicine/MedicineCreate";
-import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import MedicationIcon from '@mui/icons-material/Medication';
+import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+import MedicationIcon from "@mui/icons-material/Medication";
+import { Route } from "react-router-dom";
+import Schedule from "../appointment/schedule/Schedule";
+import AppointmentList from "../appointment/AppointmentList";
+import AppointmentCreate from "../appointment/AppointmentCreate";
+import { AppointmentEdit } from "../appointment/AppointmentEdit";
+import BookmarksIcon from '@mui/icons-material/Bookmarks';
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -51,7 +57,7 @@ const App = () => {
       MuiDrawer: {
         styleOverrides: {
           root: ({ theme }) => ({
-            backgroundColor: theme.palette.primary.main,
+            // backgroundColor: theme.palette.primary.main,
             height: "100vh !important",
             "& .MuiMenuItem-root": {
               color: theme.palette.primary.contrastText,
@@ -304,8 +310,23 @@ const App = () => {
         show={ShowGuesser}
         create={MedicalAssistantCreate}
         icon={SupervisorAccountIcon}
-        recordRepresentation={(record) => `${record.firstname} ${record.lastname}`}
+        recordRepresentation={(record) =>
+          `${record.firstname} ${record.lastname}`
+        }
       />
+      <Resource
+        name="appointment"
+        options={{ label: "Rendez-Vous" }}
+        list={AppointmentList}
+        edit={AppointmentEdit}
+        show={ShowGuesser}
+        create={AppointmentCreate}
+        icon={BookmarksIcon}
+        recordRepresentation={(record) => `Rendez vous du ${record.date}`}
+      />
+      <CustomRoutes>
+        <Route path="/appointments" element={<Schedule />} />
+      </CustomRoutes>
     </Admin>
   );
 };
