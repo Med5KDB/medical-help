@@ -36,7 +36,8 @@ export const AdminMenu = () => {
           primaryText="Agenda"
           leftIcon={<EventIcon />}
         />
-        <Divider />        
+        <MedicalHelpResourceItem name="appointment" />
+        <Divider />
       </Stack>
     </Menu>
   );
