@@ -1,18 +1,18 @@
 import {
   ChipField,
   Datagrid,
+  DateField,
   FunctionField,
   List,
   ListProps,
   ReferenceField,
-  TextField,
 } from "react-admin";
 
 const AppointmentList = (props: ListProps) => {
   return (
     <List {...props} resource="appointment">
       <Datagrid rowClick="show">
-        <TextField source="date" label="Date de rendez-vous" />
+        <DateField source="date" label="Date de rendez-vous" />
         <ChipField source="status" label="Statut " color="warning" />
         <ChipField
           source="appointmentType"

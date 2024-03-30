@@ -1,6 +1,5 @@
 import {
   PasswordInput,
-  SelectInput,
   SimpleForm,
   TextInput,
   email,
@@ -61,6 +60,7 @@ const DoctorForm = () => {
             InputProps={{ endAdornment: <StarRateIcon /> }}
           />
         </Grid>
+        
 
         {/* <Grid item xs={4}>
           <SelectInput
