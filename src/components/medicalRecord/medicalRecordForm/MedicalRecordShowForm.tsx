@@ -161,7 +161,7 @@ export const MedicalRecordShowForm = () => {
           </Grid>
 
           <Grid xs={7} sm={7} height="100%" flex={1}>
-            <Grid sx={{ ml: 1, mb: 1, mt: 2, mr: 1 }} height="100%">
+            <Grid sx={{ m: 1, mt: 2, overflowY: "scroll" }} height="100%">
               <FormFieldValuesShow
                 FormFieldValues={record.formFieldValue}
                 FormFields={formFields}
