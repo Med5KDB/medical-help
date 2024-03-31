@@ -21,13 +21,23 @@ const defaultTheme = createTheme();
 export default function SignInSide() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [usernameIsEmpty, setUsernameIsEmpty] = useState(false);
+  const [passeordIsEmpty, setPasseordIsEmpty] = useState(false);
 
   const login = useLogin();
   const notify = useNotify();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    if (!username && !password) {
+      setUsernameIsEmpty(true);
+      setPasseordIsEmpty(true);
+      return;
+    }
+    if (!password) {
+      setPasseordIsEmpty(true);
+      return;
+    }
     login({ username, password }).catch(() =>
       notify("Invalid username or password", { type: "error" })
     );
@@ -73,7 +83,7 @@ export default function SignInSide() {
               backgroundSize: "cover",
               backgroundPosition: "center",
               borderRadius: "10px",
-              borderTopRightRadius: 0, // Supprimer le border radius à droite
+              borderTopRightRadius: 0,
               borderBottomRightRadius: 0,
             }}
           />
@@ -86,7 +96,7 @@ export default function SignInSide() {
             elevation={10}
             square
             sx={{
-              borderTopRightRadius: "10px", // Supprimer le border radius à droite
+              borderTopRightRadius: "10px",
               borderBottomRightRadius: "10px",
             }}
           >
@@ -113,26 +123,42 @@ export default function SignInSide() {
                   required
                   fullWidth
                   id="username"
-                  label="username"
+                  label="Nom d'utilisateur"
                   name="username"
-                  onChange={(e) => setUsername(e.target.value)}
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                    setUsernameIsEmpty(false);
+                  }}
                   autoComplete="username"
                   autoFocus
+                  helperText={
+                    usernameIsEmpty
+                      ? "Veuillez saisir un nom d'utilisateur"
+                      : ""
+                  }
+                  error={usernameIsEmpty}
                 />
                 <TextField
                   margin="normal"
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  label="Mot de passe"
                   type="password"
                   id="password"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setPasseordIsEmpty(false);
+                  }}
                   autoComplete="current-password"
+                  error={passeordIsEmpty}
+                  helperText={
+                    passeordIsEmpty ? "Veuillez saisir un mot de passe" : ""
+                  }
                 />
                 <FormControlLabel
                   control={<Checkbox value="remember" color="primary" />}
-                  label="Remember me"
+                  label="Se souvenir de moi"
                 />
                 <Button
                   type="submit"

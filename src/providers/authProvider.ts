@@ -123,7 +123,7 @@ const authProvider: AuthProvider = {
 export const resourceToPermissionMapper: Record<string, string[]> = {
   ADMIN: ["hospital", "doctor", "medical-assistant", "patient", "medicalRecord", "medicine", 'appointment'],
   DOCTOR: ["medical-assistant", "patient", "medicalRecord", "medicine", 'appointment'],
-  MEDICALASSISTANT: ["patient", "medicalRecord", "medicine"],
+  MEDICAL_ASSISTANT: ["patient", "medicalRecord", "medicine"],
 };
 
 

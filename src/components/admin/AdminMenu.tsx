@@ -26,7 +26,7 @@ export const AdminMenu = () => {
     const userRole = permissions;
 
     if (!userRole || !resourceToPermissionMapper[userRole]) {
-      return { firstResource: undefined, restResources: [] }; // Retourner un objet avec des valeurs par défaut
+      return { firstResource: undefined, restResources: [] };
     }
 
     const resources = resourceToPermissionMapper[userRole];
@@ -44,7 +44,6 @@ export const AdminMenu = () => {
           sx={{
             p: 2,
             pb: 0,
-
             textAlign: "center",
           }}
         >
@@ -57,7 +56,7 @@ export const AdminMenu = () => {
         {restResources.map((resource: string) => (
           <Menu.ResourceItem name={resource} />
         ))}
-        {permissions !== "MEDICALASSISTANT" && (
+        {permissions !== "MEDICAL_ASSISTANT" && (
           <Menu.Item
             to={{
               pathname: "/appointments",
