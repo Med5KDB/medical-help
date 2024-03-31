@@ -338,7 +338,9 @@ const App = () => {
         show={ShowGuesser}
         create={AppointmentCreate}
         icon={BookmarksIcon}
-        recordRepresentation={(record) => `Rendez vous du ${record.date}`}
+        recordRepresentation={(record) =>
+          `Rendez-vous du ${new Date(record?.date).toLocaleDateString()}`
+        }
       />
       <CustomRoutes>
         <Route path="/appointments" element={<Schedule />} />

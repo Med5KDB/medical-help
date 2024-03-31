@@ -25,17 +25,12 @@ export const AdminMenu = () => {
     const userRole = permissions;
 
     if (!userRole || !resourceToPermissionMapper[userRole]) {
-      return { firstResource: undefined, restResources: [] };
+      return undefined;
     }
 
     const resources = resourceToPermissionMapper[userRole];
-    const firstResource = resources[0];
-    const restResources = resources.slice(1);
-    return { firstResource, restResources };
+    return resources;
   };
-
-  // eslint-disable-next-line no-unused-vars
-  const { firstResource, restResources } = getResourcesForRole();
 
   return (
     <Menu>
@@ -49,11 +44,8 @@ export const AdminMenu = () => {
         >
           {/* <img src={logo} height="80px" width="80px" alt="Logo" /> */}
         </Box>
-        <Menu.DashboardItem
-          leftIcon={<GridViewIcon />}
-          // to={`${firstResource}/`}
-        />
-        {restResources.map((resource: string) => (
+        <Menu.DashboardItem leftIcon={<GridViewIcon />} />
+        {getResourcesForRole()?.map((resource: string) => (
           <Menu.ResourceItem key={resource} name={resource} />
         ))}
         {permissions !== "MEDICAL_ASSISTANT" && (
