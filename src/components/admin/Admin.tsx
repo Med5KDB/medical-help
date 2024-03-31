@@ -34,7 +34,8 @@ import Schedule from "../appointment/schedule/Schedule";
 import AppointmentList from "../appointment/AppointmentList";
 import AppointmentCreate from "../appointment/AppointmentCreate";
 import { AppointmentEdit } from "../appointment/AppointmentEdit";
-import BookmarksIcon from '@mui/icons-material/Bookmarks';
+import BookmarksIcon from "@mui/icons-material/Bookmarks";
+import LoginPage from "../loginPage/Login";
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -255,14 +256,17 @@ const App = () => {
       layout={AdminLayout}
       theme={theme}
       i18nProvider={i18nProvider}
+      loginPage={LoginPage}
     >
-      {/* <Resource
-        name="admin"
-        options={{ label: "Assistant Administratif" }}
-        list={ListGuesser}
-        edit={EditGuesser}
-        show={ShowGuesser}
-      /> */}
+      <Resource
+        name="medicalRecord"
+        options={{ label: "Dossiers Patients" }}
+        list={MedicalRecordList}
+        edit={MedicalRecordEdit}
+        show={MedicalRecordShow}
+        create={MedicalRecordCreate}
+        icon={FolderIcon}
+      />
       <Resource
         name="doctor"
         options={{ label: "Docteur" }}
@@ -320,15 +324,6 @@ const App = () => {
         }
       />
       <Resource
-        name="medicalRecord"
-        options={{ label: "Dossiers Patients" }}
-        list={MedicalRecordList}
-        edit={MedicalRecordEdit}
-        show={MedicalRecordShow}
-        create={MedicalRecordCreate}
-        icon={FolderIcon}
-        />
-       <Resource
         name="appointment"
         options={{ label: "Rendez-Vous" }}
         list={AppointmentList}
