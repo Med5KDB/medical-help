@@ -1,8 +1,16 @@
-import { Datagrid, DateField, List, TextField } from "react-admin";
+import {
+  Datagrid,
+  DateField,
+  List,
+  ListProps,
+  SearchInput,
+  TextField,
+} from "react-admin";
 import ListRecordActions from "../../common/ListRecordActions";
 
-export const PatientList = () => (
-  <List>
+const PatientFilters = [<SearchInput key="search" source="search" alwaysOn />];
+export const PatientList = (props: ListProps) => (
+  <List filters={PatientFilters} {...props}>
     <Datagrid rowClick="show">
       <TextField source="firstname" label="Prénom" />
       <TextField source="lastname" label="Nom" />

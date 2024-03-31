@@ -25,9 +25,9 @@ const AdminAppBar = (props: AppBarProps) => {
           sm: sidebarOpen ? "240px" : "55px",
         },
         border: "none",
-        ".RaAppBar-menuButton": {
-          display: "none",
-        },
+        // ".RaAppBar-menuButton": {
+        //   display: "none",
+        // },
       }}
     >
       <TitlePortal />

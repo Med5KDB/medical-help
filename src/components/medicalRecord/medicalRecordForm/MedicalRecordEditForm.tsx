@@ -6,10 +6,7 @@ export const MedicalRecordEditForm = () => {
   const FormFields = getAllFormFields();
   return (
     <SimpleForm>
-      <RAFormFieldValuesInput
-        source="formFieldValues"
-        FormFields={FormFields}
-      />
+      <RAFormFieldValuesInput source="formFieldValue" FormFields={FormFields} />
     </SimpleForm>
   );
 };

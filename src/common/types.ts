@@ -10,7 +10,7 @@ export enum FormFieldValueType {
 
 export interface FormFieldValue {
     id: string;
-    FormFieldkey: String;
+    formFieldkey: String;
     value: FormFieldValueType
 
 }

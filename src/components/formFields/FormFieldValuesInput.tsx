@@ -81,7 +81,7 @@ export const FormFieldValuesInput = (props: {
                 {FormFieldGroup.map((FormField) => {
                   const FormFieldValue = fieldValue.find(
                     (FormFieldValue) =>
-                      FormFieldValue.FormFieldkey === FormField.key
+                      FormFieldValue.formFieldkey === FormField.key
                   );
                   const InputComponent =
                     inputComponentsByFormFieldValueType[FormField.valueType];
@@ -97,13 +97,13 @@ export const FormFieldValuesInput = (props: {
                           const value = e.target.value;
                           const newFormFieldValue: FormFieldValue = {
                             id: new ObjectID().toHexString(),
-                            FormFieldkey: FormField.key,
+                            formFieldkey: FormField.key,
                             value: value,
                           };
 
                           const updatedFormFieldValues = FormFieldValue
                             ? fieldValue.map((FormFieldValue) =>
-                                FormFieldValue.FormFieldkey === FormField.key
+                                FormFieldValue.formFieldkey === FormField.key
                                   ? newFormFieldValue
                                   : FormFieldValue
                               )

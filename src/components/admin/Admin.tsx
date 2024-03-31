@@ -28,6 +28,7 @@ import { MedicalRecordCreate } from "../medicalRecord/MedicalRecordCreate";
 import { MedicalRecordEdit } from "../medicalRecord/MedicalRecordEdit";
 import { MedicalRecordList } from "../medicalRecord/MedicalRecordList";
 import FolderIcon from "@mui/icons-material/Folder";
+import { MedicalRecordShow } from "../medicalRecord/MedicalRecordShow";
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -317,7 +318,7 @@ const App = () => {
         options={{ label: "Dossiers Patients" }}
         list={MedicalRecordList}
         edit={MedicalRecordEdit}
-        show={ShowGuesser}
+        show={MedicalRecordShow}
         create={MedicalRecordCreate}
         icon={FolderIcon}
       />

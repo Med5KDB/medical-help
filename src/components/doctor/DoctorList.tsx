@@ -9,9 +9,7 @@ import {
 } from "react-admin";
 import ListRecordActions from "../../common/ListRecordActions";
 
-const doctorFilters = [
-  <SearchInput key="search" source="firstName,lastName" alwaysOn />,
-];
+const doctorFilters = [<SearchInput key="search" source="search" alwaysOn />];
 export const DoctorList = (props: ListProps) => (
   <List {...props} filters={doctorFilters} resource="doctor">
     <Datagrid rowClick="show">

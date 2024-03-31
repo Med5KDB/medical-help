@@ -1,24 +1,21 @@
-import { Menu } from "react-admin";
+import { Menu, useSidebarState } from "react-admin";
 import { Box, Divider, Stack } from "@mui/material";
 import { GridView as GridViewIcon } from "@mui/icons-material";
-
+import logo from "../../common/img/mh5.svg";
 export const AdminMenu = () => {
+  const [sidebarOpen] = useSidebarState();
   return (
     <Menu>
-      <Stack spacing={2}>
+      <Stack spacing={3}>
         <Box
           sx={{
             p: 2,
+            pb: 0,
+
             textAlign: "center",
           }}
         >
-          {/* <img
-            src="https://picsum.photos/seed/picsum/200/300
-"
-            height="100px"
-            width="120px"
-            alt="Logo"
-          /> */}
+          {/* <img src={logo} height="80px" width="80px" alt="Logo" /> */}
         </Box>
         <Menu.DashboardItem leftIcon={<GridViewIcon />} />
         <MedicalHelpResourceItem name="hospital" />
