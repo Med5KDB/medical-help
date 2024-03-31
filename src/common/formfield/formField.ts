@@ -3,7 +3,16 @@ import { FormField } from "../types";
 
 async function getAllFormFieldsQuery(): Promise<FormField[]> {
     try {
-        const response = await fetch(`${import.meta.env.VITE_SIMPLE_REST_URL}/formfield`);
+        const token = localStorage.getItem("token"); // Récupération du token depuis le localStorage
+        if (!token) {
+            throw new Error("No token found in localStorage");
+        }
+
+        const response = await fetch(`${import.meta.env.VITE_SIMPLE_REST_URL}/formfield`, {
+            headers: {
+                Authorization: `Bearer ${token}` // Ajout du token dans l'en-tête Authorization
+            }
+        });
         if (!response.ok) {
             throw new Error("Error retrieving form fields");
         }
