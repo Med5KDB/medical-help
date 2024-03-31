@@ -4,6 +4,7 @@ import FormFieldValuesShow from "../../formFields/FormFieldsValueShow";
 import { ReferenceField, useShowContext, FunctionField } from "react-admin";
 import { Box, Card, Divider, Grid, Stack, Typography } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import maritalStatusLabel from "../../../utils/MaritalStatusLabel";
 
 interface Patient {
   firstname: String;
@@ -49,7 +50,7 @@ const PatientShow = (record: any) => (
     <Divider sx={{ mb: 1, mt: 3 }} />
     <Grid container pr={1} pl={1} rowSpacing={2}>
       <Grid item sm={6}>
-        <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={20}>
+        <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={17}>
           Situation matrimoniale
         </Typography>
       </Grid>
@@ -62,11 +63,11 @@ const PatientShow = (record: any) => (
         alignItems="flex-end"
       >
         <Typography fontWeight={"bold"} sx={{ mt: 1, mb: 1 }}>
-          {record?.maritalStatus}
+          {maritalStatusLabel(record?.maritalStatus)}
         </Typography>
       </Grid>
       <Grid item sm={6}>
-        <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={20}>
+        <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={17}>
           Téléphone
         </Typography>
       </Grid>
@@ -83,7 +84,7 @@ const PatientShow = (record: any) => (
         </Typography>
       </Grid>
       <Grid item sm={6}>
-        <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={20}>
+        <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={17}>
           Date naissance
         </Typography>
       </Grid>

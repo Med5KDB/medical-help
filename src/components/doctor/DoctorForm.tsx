@@ -63,7 +63,6 @@ const DoctorForm = () => {
             InputProps={{ endAdornment: <StarRateIcon /> }}
           />
         </Grid>
-        
 
         {/* <Grid item xs={4}>
           <SelectInput
@@ -86,12 +85,8 @@ const DoctorForm = () => {
           />
         </Grid>
         <Grid item xs={12} sm={8}>
-          <ReferenceInput
-            source="hospitalId"
-            reference="hospital"
-            // validate={[required()]}
-          >
-            <AutocompleteInput label="Hospital" />
+          <ReferenceInput source="hospitalId" reference="hospital">
+            <AutocompleteInput label="Hospital" size="small" />
           </ReferenceInput>
         </Grid>
       </Grid>

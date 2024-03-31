@@ -23,7 +23,7 @@ export const PatientList = (props: ListProps) => (
       <FunctionField
         source="maritalStatus"
         label="Situation matrimoniale"
-        render={(record) =>
+        render={(record: any) =>
           record?.maritalStatus ? (
             <MaritalStatusChip status={record.maritalStatus} />
           ) : null

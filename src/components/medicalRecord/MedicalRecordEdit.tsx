@@ -6,8 +6,3 @@ export const MedicalRecordEdit = (props: EditProps) => (
     <MedicalRecordEditForm />
   </Edit>
 );
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a9cb16e (Fix problem to display reference fields)
