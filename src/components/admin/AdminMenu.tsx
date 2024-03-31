@@ -1,7 +1,10 @@
 import { Menu, useSidebarState } from "react-admin";
 import { Box, Divider, Stack } from "@mui/material";
-import { GridView as GridViewIcon } from "@mui/icons-material";
-import logo from "../../common/img/mh5.svg";
+import {
+  GridView as GridViewIcon,
+  Event as EventIcon,
+} from "@mui/icons-material";
+
 export const AdminMenu = () => {
   const [sidebarOpen] = useSidebarState();
   return (
@@ -25,6 +28,14 @@ export const AdminMenu = () => {
         <MedicalHelpResourceItem name="medicine" />
         <MedicalHelpResourceItem name="medicalRecord" />
 
+        <Menu.Item
+          to={{
+            pathname: "/appointments",
+          }}
+          primaryText="Agenda"
+          leftIcon={<EventIcon />}
+        />
+        <MedicalHelpResourceItem name="appointment" />
         <Divider />
       </Stack>
     </Menu>

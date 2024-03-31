@@ -4,9 +4,11 @@ import {
   List,
   ListProps,
   SearchInput,
+  FunctionField,
   TextField,
 } from "react-admin";
 import ListRecordActions from "../../common/ListRecordActions";
+import MaritalStatusChip from "./MaritalStatusChip";
 
 const PatientFilters = [<SearchInput key="search" source="search" alwaysOn />];
 export const PatientList = (props: ListProps) => (
@@ -18,7 +20,15 @@ export const PatientList = (props: ListProps) => (
       <TextField source="address" label="Adresse" />
       <TextField source="phoneNumber" label="Numéro de téléphone" />
       <TextField source="occupation" label="Profession" />
-      <TextField source="maritalStatus" label="Situation matrimoniale" />
+      <FunctionField
+        source="maritalStatus"
+        label="Situation matrimoniale"
+        render={(record) =>
+          record?.maritalStatus ? (
+            <MaritalStatusChip status={record.maritalStatus} />
+          ) : null
+        }
+      />
       <ListRecordActions />
     </Datagrid>
   </List>

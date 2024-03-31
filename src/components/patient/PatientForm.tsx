@@ -57,7 +57,7 @@ const PatientForm = () => {
             validate={[required()]}
             choices={[
               { id: "SINGLE", name: "Célibataire" },
-              { id: "MARIED", name: "Marié(e)" },
+              { id: "MARRIED", name: "Marié(e)" },
               { id: "DIVORCED", name: "Divorcé(e)" },
               { id: "WIDOWED", name: "Veuf/Veuve" },
             ]}
@@ -67,7 +67,7 @@ const PatientForm = () => {
 
         <Grid item xs={4}>
           <SelectInput
-            source="sexe"
+            source="sex"
             choices={[
               { id: "MALE", name: "Masculin" },
               { id: "FEMALE", name: "Féminin" },

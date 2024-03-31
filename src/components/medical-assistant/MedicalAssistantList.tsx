@@ -23,7 +23,7 @@ const MedicalAssistantList = (props: ListProps) => (
       <TextField source="username" label="Nom d'utilisateur" />
       <TextField source="firstname" label="Prénom" />
       <TextField source="lastname" label="Nom" />
-      <EmailField source="email" label="E-mail" />
+      <EmailField source="email" label="E-mail" color="#0b6bb0" />
       <TextField source="phoneNumber" label="Numéro de téléphone" />
       <ReferenceField
         source="doctorId"
