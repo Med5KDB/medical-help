@@ -1,4 +1,3 @@
-import React from "react";
 import { Menu, usePermissions } from "react-admin";
 import { Divider, Stack, Box } from "@mui/material";
 import {
@@ -54,7 +53,7 @@ export const AdminMenu = () => {
           to={`${firstResource}/`}
         />
         {restResources.map((resource: string) => (
-          <Menu.ResourceItem name={resource} />
+          <Menu.ResourceItem key={resource} name={resource} />
         ))}
         {permissions !== "MEDICAL_ASSISTANT" && (
           <Menu.Item

@@ -36,6 +36,11 @@ import AppointmentCreate from "../appointment/AppointmentCreate";
 import { AppointmentEdit } from "../appointment/AppointmentEdit";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import LoginPage from "../loginPage/Login";
+import DoctorShow from "../doctor/DoctorShow";
+import HospitalShow from "../Hospital/HospitalShow";
+import MedicalAssistantShow from "../medical-assistant/MedicalAssistantShow";
+import MedicineShow from "../Medicine/MedicineShow";
+import PatientShow from "../patient/PatientShow";
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -272,7 +277,7 @@ const App = () => {
         options={{ label: "Docteur" }}
         list={DoctorList}
         edit={DoctorEdit}
-        show={ShowGuesser}
+        show={DoctorShow}
         create={DoctorCreate}
         icon={AccountCircleIcon}
         recordRepresentation={(record) =>
@@ -284,7 +289,7 @@ const App = () => {
         options={{ label: "Patient" }}
         list={PatientList}
         edit={PatientEdit}
-        show={ShowGuesser}
+        show={PatientShow}
         create={PatientCreate}
         icon={MasksIcon}
         recordRepresentation={(record) =>
@@ -296,7 +301,7 @@ const App = () => {
         options={{ label: "Médicaments" }}
         list={MedicinetList}
         edit={MedicineEdit}
-        show={ShowGuesser}
+        show={MedicineShow}
         create={MedicineCreate}
         icon={MedicationIcon}
         recordRepresentation={(record) => `${record.name}`}
@@ -307,7 +312,7 @@ const App = () => {
         list={hospitalList}
         edit={HospitalEdit}
         create={HospitalCreate}
-        show={ShowGuesser}
+        show={HospitalShow}
         icon={LocalHospitalIcon}
         recordRepresentation={(record) => `${record.name}`}
       />
@@ -316,7 +321,7 @@ const App = () => {
         options={{ label: "Assistant médical" }}
         list={MedicalAssistantList}
         edit={MedicalAssistantEdit}
-        show={ShowGuesser}
+        show={MedicalAssistantShow}
         create={MedicalAssistantCreate}
         icon={SupervisorAccountIcon}
         recordRepresentation={(record) =>

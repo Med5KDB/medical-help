@@ -1,4 +1,4 @@
-import { EditButton, Show, ShowProps, Toolbar, TopToolbar } from "react-admin";
+import { EditButton, Show, ShowProps, TopToolbar } from "react-admin";
 
 import { MedicalRecordShowForm } from "./medicalRecordForm/MedicalRecordShowForm";
 
