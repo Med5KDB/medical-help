@@ -11,7 +11,7 @@ const MedicalRecordAction = (
 export const MedicalRecordShow = (props: ShowProps) => {
   return (
     <Show
-      title="Consulter un Dossier Medicale"
+      title="Consulter un Dossier médical"
       {...props}
       actions={MedicalRecordAction}
     >

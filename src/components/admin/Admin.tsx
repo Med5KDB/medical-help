@@ -1,4 +1,4 @@
-import { Admin, CustomRoutes, Resource, ShowGuesser } from "react-admin";
+import { Admin, CustomRoutes, Resource } from "react-admin";
 import { PatientList } from "../patient/PatientList";
 import { PatientCreate } from "../patient/PatientCreate";
 import { dataProvider } from "../../providers/dataProvider";
@@ -42,6 +42,7 @@ import MedicalAssistantShow from "../medical-assistant/MedicalAssistantShow";
 import MedicineShow from "../Medicine/MedicineShow";
 import PatientShow from "../patient/PatientShow";
 import AdminWelcomePage from "./AdminWelcomePage";
+import AppointmentShow from "../appointment/AppointmentShow";
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -276,7 +277,7 @@ const App = () => {
       />
       <Resource
         name="doctor"
-        options={{ label: "Docteur" }}
+        options={{ label: "Docteurs" }}
         list={DoctorList}
         edit={DoctorEdit}
         show={DoctorShow}
@@ -288,7 +289,7 @@ const App = () => {
       />
       <Resource
         name="patient"
-        options={{ label: "Patient" }}
+        options={{ label: "Patients" }}
         list={PatientList}
         edit={PatientEdit}
         show={PatientShow}
@@ -310,7 +311,7 @@ const App = () => {
       />
       <Resource
         name="hospital"
-        options={{ label: "Hôpital" }}
+        options={{ label: "Hôpitaux" }}
         list={hospitalList}
         edit={HospitalEdit}
         create={HospitalCreate}
@@ -320,7 +321,7 @@ const App = () => {
       />
       <Resource
         name="medical-assistant"
-        options={{ label: "Assistant médical" }}
+        options={{ label: "Assistants médicaux" }}
         list={MedicalAssistantList}
         edit={MedicalAssistantEdit}
         show={MedicalAssistantShow}
@@ -335,7 +336,7 @@ const App = () => {
         options={{ label: "Rendez-Vous" }}
         list={AppointmentList}
         edit={AppointmentEdit}
-        show={ShowGuesser}
+        show={AppointmentShow}
         create={AppointmentCreate}
         icon={BookmarksIcon}
         recordRepresentation={(record) =>
