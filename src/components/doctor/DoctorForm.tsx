@@ -2,7 +2,6 @@ import {
   AutocompleteInput,
   PasswordInput,
   ReferenceInput,
-  SelectInput,
   SimpleForm,
   TextInput,
   email,
@@ -13,6 +12,8 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+
 const DoctorForm = () => {
   return (
     <SimpleForm>
@@ -64,18 +65,14 @@ const DoctorForm = () => {
           />
         </Grid>
 
-        {/* <Grid item xs={4}>
-          <SelectInput
-            source="sexe"
-            choices={[
-              { id: "MALE", name: "Masculin" },
-              { id: "FEMALE", name: "Féminin" },
-            ]}
-            label="Sexe"
-            validate={[required()]}
+        <Grid item xs={12} sm={4}>
+          <TextInput
+            source="phoneNumber"
+            label="Numéro du téléphone"
             fullWidth
+            InputProps={{ endAdornment: <PhoneIcon /> }}
           />
-        </Grid> */}
+        </Grid>
         <Grid item xs={4}>
           <PasswordInput
             source="password"

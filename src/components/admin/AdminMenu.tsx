@@ -34,6 +34,7 @@ export const AdminMenu = () => {
     return { firstResource, restResources };
   };
 
+  // eslint-disable-next-line no-unused-vars
   const { firstResource, restResources } = getResourcesForRole();
 
   return (
@@ -50,7 +51,7 @@ export const AdminMenu = () => {
         </Box>
         <Menu.DashboardItem
           leftIcon={<GridViewIcon />}
-          to={`${firstResource}/`}
+          // to={`${firstResource}/`}
         />
         {restResources.map((resource: string) => (
           <Menu.ResourceItem key={resource} name={resource} />

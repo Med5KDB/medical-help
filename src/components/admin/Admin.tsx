@@ -41,6 +41,7 @@ import HospitalShow from "../Hospital/HospitalShow";
 import MedicalAssistantShow from "../medical-assistant/MedicalAssistantShow";
 import MedicineShow from "../Medicine/MedicineShow";
 import PatientShow from "../patient/PatientShow";
+import AdminWelcomePage from "./AdminWelcomePage";
 
 const App = () => {
   const theme: ThemeOptions = {
@@ -262,6 +263,7 @@ const App = () => {
       theme={theme}
       i18nProvider={i18nProvider}
       loginPage={LoginPage}
+      dashboard={AdminWelcomePage}
     >
       <Resource
         name="medicalRecord"
