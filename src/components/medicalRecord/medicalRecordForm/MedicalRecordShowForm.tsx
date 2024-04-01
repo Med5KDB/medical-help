@@ -2,7 +2,7 @@ import { FormField } from "../../../common/types";
 import getAllFormFields from "../../../common/formfield/formField";
 import FormFieldValuesShow from "../../formFields/FormFieldsValueShow";
 import { ReferenceField, useShowContext, FunctionField } from "react-admin";
-import { Box, Card, Divider, Grid, Stack, Typography } from "@mui/material";
+import { Box, Card, Divider, Grid, Typography } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import maritalStatusLabel from "../../../utils/MaritalStatusLabel";
 
@@ -15,136 +15,112 @@ interface Patient {
   address: String;
 }
 
-const PatientShow = (record: any) => (
-  <>
-    <Grid
-      container
-      direction="row"
-      justifyContent="flex-start"
-      alignItems="center"
-    >
-      <Box
-        sx={{
-          m: 1,
-          mt: 3,
-          display: "inline-block",
-        }}
-      >
-        <AccountCircleIcon sx={{ fontSize: "120px" }} color="inherit" />
-      </Box>
-      <Box
-        sx={{
-          display: "inline-block",
-          ml: 2,
-          top: 0,
-        }}
-      >
-        <Typography fontWeight={"bold"} sx={{ mt: 1 }} variant="h5">
-          {record?.firstname} {record?.lastname}
-        </Typography>
-        <Typography fontSize={18} sx={{ mt: 1 }}>
-          {record?.occupation}
-        </Typography>
-      </Box>
-    </Grid>
-    <Divider sx={{ mb: 1, mt: 3 }} />
-    <Grid container pr={1} pl={1} rowSpacing={2}>
-      <Grid item sm={6}>
-        <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={17}>
-          Situation matrimoniale
-        </Typography>
-      </Grid>
-      <Grid
-        item
-        sm={6}
-        container
-        direction="column"
-        justifyContent="space-evenly"
-        alignItems="flex-end"
-      >
-        <Typography fontWeight={"bold"} sx={{ mt: 1, mb: 1 }}>
-          {maritalStatusLabel(record?.maritalStatus)}
-        </Typography>
-      </Grid>
-      <Grid item sm={6}>
-        <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={17}>
-          Téléphone
-        </Typography>
-      </Grid>
-      <Grid
-        item
-        sm={6}
-        container
-        direction="column"
-        justifyContent="space-evenly"
-        alignItems="flex-end"
-      >
-        <Typography fontWeight={"bold"} sx={{ mt: 1 }}>
-          {record?.phoneNumber}
-        </Typography>
-      </Grid>
-      <Grid item sm={6}>
-        <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={17}>
-          Date naissance
-        </Typography>
-      </Grid>
-      <Grid
-        item
-        sm={6}
-        container
-        direction="column"
-        justifyContent="space-evenly"
-        alignItems="flex-end"
-      >
-        <Typography fontWeight={"bold"}>
-          {new Date(record?.birthDate).toLocaleDateString()}
-        </Typography>
-      </Grid>
-    </Grid>
-  </>
-);
-
-export const MedicalRecordShowForm2 = () => {
-  const { record } = useShowContext();
-  const formFields: FormField[] = getAllFormFields();
-
+const PatientShow = (record: any) => {
   return (
-    <Grid container>
-      <Grid item xs={12}>
-        <ReferenceField
-          source="patientId"
-          label="Patient"
-          reference="patient"
-          link="show"
+    <>
+      <Grid
+        container
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="center"
+      >
+        <Box
+          sx={{
+            m: 1,
+            mt: 3,
+            display: "inline-block",
+          }}
         >
-          <Grid item xs={6} sm={6}>
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-              spacing={2}
-            >
-              <Typography>Nom Complet Patient : </Typography>
-              <FunctionField<{ record: Patient }> render={PatientShow} />
-            </Stack>
-          </Grid>
-        </ReferenceField>
+          <AccountCircleIcon
+            sx={{ fontSize: { sm: "120px", xs: "70px" } }}
+            color="inherit"
+          />
+        </Box>
+        <Box
+          sx={{
+            display: "inline-block",
+            ml: 2,
+            top: 0,
+          }}
+        >
+          <Typography fontWeight={"bold"} sx={{ mt: 1 }} variant="h5">
+            {record?.firstname} {record?.lastname}
+          </Typography>
+          <Typography fontSize={18} sx={{ mt: 1 }}>
+            {record?.occupation}
+          </Typography>
+        </Box>
       </Grid>
-      <Grid item sm={12}></Grid>
-    </Grid>
+      <Divider sx={{ mb: 1, mt: 3 }} />
+
+      <Grid container pr={1} pl={1} rowSpacing={2}>
+        <Grid item sm={6}>
+          <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={17}>
+            Situation matrimoniale
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          sm={6}
+          container
+          direction="column"
+          justifyContent="space-evenly"
+          alignItems="flex-end"
+        >
+          <Typography fontWeight={"bold"} sx={{ mt: 1, mb: 1 }}>
+            {maritalStatusLabel(record?.maritalStatus)}
+          </Typography>
+        </Grid>
+        <Grid item sm={6}>
+          <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={17}>
+            Téléphone
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          sm={6}
+          container
+          direction="column"
+          justifyContent="space-evenly"
+          alignItems="flex-end"
+        >
+          <Typography fontWeight={"bold"} sx={{ mt: 1 }}>
+            {record?.phoneNumber}
+          </Typography>
+        </Grid>
+        <Grid item sm={6}>
+          <Typography fontWeight={500} sx={{ mt: 1, mb: 1 }} fontSize={17}>
+            Date naissance
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          sm={6}
+          container
+          direction="column"
+          justifyContent="space-evenly"
+          alignItems="flex-end"
+        >
+          <Typography fontWeight={"bold"}>
+            {new Date(record?.birthDate).toLocaleDateString()}
+          </Typography>
+        </Grid>
+      </Grid>
+    </>
   );
 };
+
 export const MedicalRecordShowForm = () => {
   const { record } = useShowContext();
   const formFields: FormField[] = getAllFormFields();
 
   return (
     <>
-      <Card sx={{ height: "76vh" }}>
+      <Card sx={{ height: "76vh", overflowY: "scroll" }}>
         <Grid flex={1} container height="100%">
           <Grid
             item
-            xs={5}
+            xs={12}
             sm={5}
             sx={{ borderRight: "0.1px solid #D8D8D8" }}
             height="100%"
@@ -159,8 +135,7 @@ export const MedicalRecordShowForm = () => {
               <FunctionField<{ record: Patient }> render={PatientShow} />
             </ReferenceField>
           </Grid>
-
-          <Grid xs={7} sm={7} height="100%" flex={1}>
+          <Grid item xs={12} sm={7} height="100%" flex={1}>
             <Grid sx={{ m: 1, mt: 2, overflowY: "scroll" }} height="100%">
               <FormFieldValuesShow
                 FormFieldValues={record.formFieldValue}
