@@ -21,12 +21,20 @@ const AppointmentForm = () => {
         </Grid>
         <Grid item xs={12} sm={8}>
           <ReferenceInput source="patientId" reference="patient">
-            <AutocompleteInput validate={[required()]} label="Patient" />
+            <AutocompleteInput
+              validate={[required()]}
+              label="Patient"
+              size="small"
+            />
           </ReferenceInput>
         </Grid>
         <Grid item xs={12} sm={8}>
           <ReferenceInput source="doctorId" reference="doctor">
-            <AutocompleteInput validate={[required()]} label="Docteur" />
+            <AutocompleteInput
+              validate={[required()]}
+              label="Docteur"
+              size="small"
+            />
           </ReferenceInput>
         </Grid>
         <Grid item xs={4}>

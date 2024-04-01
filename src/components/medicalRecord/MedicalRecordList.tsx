@@ -37,8 +37,8 @@ export const MedicalRecordList = (props?: ListProps) => {
             />
           </ReferenceField>
         </HeaderLabel>
-        <DateField source="createdAt" label="Date creation " />
-        <DateField source="updatedAt " label="Date  modification" />
+        <DateField source="createdAt" label="Date Creation " />
+        <DateField source="updatedAt" label="Date Modification " />
         <ListRecordActions />
       </Datagrid>
     </List>

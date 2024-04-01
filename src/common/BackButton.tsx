@@ -9,20 +9,10 @@ const BackButton = () => {
   const theme = useTheme();
   return (
     <Button
-      startIcon={
-        <ArrowBack
-          sx={{
-            width: "20px",
-            height: "20px",
-            flexShrink: "0",
-            ml: 1,
-          }}
-        />
-      }
       sx={{
         color: "#FFFFFF",
-        width: "20px",
-        height: "40px",
+        width: { sm: "20px", xs: "40px" },
+        height: { sm: "40px", xs: "40px" },
         flexShrink: "0",
         borderRadius: "9px",
         background: theme.palette.secondary.main,
@@ -31,9 +21,20 @@ const BackButton = () => {
         "&:hover": {
           background: "#4ca18d !important",
         },
+        justifyContent: "center",
+        alignItems: "center",
       }}
       onClick={handleGoBack}
-    ></Button>
+    >
+      <ArrowBack
+        sx={{
+          width: "20px",
+          height: "20px",
+          flexShrink: "0",
+          ml: 1,
+        }}
+      />
+    </Button>
   );
 };
 

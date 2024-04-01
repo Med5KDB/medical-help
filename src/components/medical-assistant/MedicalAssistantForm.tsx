@@ -24,7 +24,7 @@ const MedicalAssistantForm = () => {
             InputProps={{ endAdornment: <AccountCircleIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <TextInput
             source="lastname"
             label="Nom"
@@ -33,7 +33,7 @@ const MedicalAssistantForm = () => {
             InputProps={{ endAdornment: <AccountCircleIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <TextInput
             source="username"
             label="Nom d'utilisateur (Pseudo)"
@@ -42,7 +42,7 @@ const MedicalAssistantForm = () => {
             InputProps={{ endAdornment: <PersonIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <TextInput
             source="email"
             type="email"
@@ -52,8 +52,8 @@ const MedicalAssistantForm = () => {
             InputProps={{ endAdornment: <EmailIcon /> }}
           />
         </Grid>
-        
-        {/* <Grid item xs={4}>
+
+        {/* <Grid item xs={12} sm={4}>
             <SelectInput
               source="sexe"
               choices={[
@@ -65,7 +65,7 @@ const MedicalAssistantForm = () => {
               fullWidth
             />
           </Grid> */}
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <PasswordInput
             source="password"
             label="Mot de passe"

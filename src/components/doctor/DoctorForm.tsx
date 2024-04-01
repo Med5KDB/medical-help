@@ -27,7 +27,7 @@ const DoctorForm = () => {
             InputProps={{ endAdornment: <AccountCircleIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <TextInput
             source="lastname"
             label="Nom"
@@ -36,7 +36,7 @@ const DoctorForm = () => {
             InputProps={{ endAdornment: <AccountCircleIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <TextInput
             source="username"
             label="Nom d'utilisateur (Pseudo)"
@@ -45,7 +45,7 @@ const DoctorForm = () => {
             InputProps={{ endAdornment: <PersonIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <TextInput
             source="email"
             type="email"
@@ -55,7 +55,7 @@ const DoctorForm = () => {
             InputProps={{ endAdornment: <EmailIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <TextInput
             source="speciality"
             label="Spécialité"
@@ -73,7 +73,7 @@ const DoctorForm = () => {
             InputProps={{ endAdornment: <PhoneIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <PasswordInput
             source="password"
             label="Mot de passe"

@@ -24,7 +24,7 @@ const PatientForm = () => {
             InputProps={{ endAdornment: <AccountCircleIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <TextInput
             source="lastname"
             label="Nom"
@@ -33,7 +33,7 @@ const PatientForm = () => {
             InputProps={{ endAdornment: <AccountCircleIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <TextInput
             source="address"
             label="Adresse"
@@ -42,7 +42,7 @@ const PatientForm = () => {
             InputProps={{ endAdornment: <LocationOnIcon /> }}
           />
         </Grid>
-        <Grid item xs={4} mb={3}>
+        <Grid item xs={12} sm={4} mb={3}>
           <TextInput
             source="occupation"
             label="Profession"
@@ -50,7 +50,7 @@ const PatientForm = () => {
             InputProps={{ endAdornment: <WorkIcon /> }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <SelectInput
             source="maritalStatus"
             label="Situation matrimoniale"
@@ -65,7 +65,7 @@ const PatientForm = () => {
           />
         </Grid>
 
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <SelectInput
             source="sex"
             choices={[
@@ -77,10 +77,15 @@ const PatientForm = () => {
             fullWidth
           />
         </Grid>
-        <Grid item xs={4}>
-          <DateInput source="birthDate" validate={[required()]} />
+        <Grid item xs={12} sm={4}>
+          <DateInput
+            source="birthDate"
+            validate={[required()]}
+            label="Date de naissance"
+            fullWidth
+          />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <TextInput
             source="phoneNumber"
             label="Numéro de téléphone"
