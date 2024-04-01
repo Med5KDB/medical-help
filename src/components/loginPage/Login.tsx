@@ -59,8 +59,8 @@ export default function SignInSide() {
           container
           component="main"
           sx={{
-            height: { sm: "100vh" },
-            width: { sm: "100vh", xs: "90%" },
+            height: { sm: "80vh" },
+            width: { sm: "80vh", xs: "90%" },
             m: "auto",
             mt: { sm: 10 },
           }}
@@ -96,7 +96,8 @@ export default function SignInSide() {
             sx={{
               borderTopRightRadius: "10px",
               borderBottomRightRadius: "10px",
-              borderRadius: { xs: "10px" },
+              borderTopLeftRadius: { xs: "10px", sm: 0 },
+              borderBottomLeftRadius: { xs: "10px", sm: 0 },
             }}
           >
             <Box
