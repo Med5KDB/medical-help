@@ -1,11 +1,9 @@
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -61,8 +59,8 @@ export default function SignInSide() {
           container
           component="main"
           sx={{
-            height: "80vh",
-            width: { sm: "100vh" },
+            height: { sm: "100vh" },
+            width: { sm: "100vh", xs: "90%" },
             m: "auto",
             mt: { sm: 10 },
           }}
@@ -98,6 +96,7 @@ export default function SignInSide() {
             sx={{
               borderTopRightRadius: "10px",
               borderBottomRightRadius: "10px",
+              borderRadius: { xs: "10px" },
             }}
           >
             <Box
