@@ -59,9 +59,10 @@ export default function SignInSide() {
           container
           component="main"
           sx={{
-            height: { sm: "80vh" },
-            width: { sm: "80vh", xs: "90%" },
+            height: { sm: "82vh" },
+            width: { sm: "130vh", xs: "90%" },
             m: "auto",
+            ml: { sm: "20%" },
             mt: { sm: 10 },
           }}
         >
