@@ -59,11 +59,11 @@ export default function SignInSide() {
           container
           component="main"
           sx={{
-            height: { sm: "82vh" },
+            height: { sm: "90vh" },
             width: { sm: "130vh", xs: "90%" },
             m: "auto",
             ml: { sm: "20%" },
-            mt: { sm: 10 },
+            mt: { sm: 5 },
           }}
         >
           <CssBaseline />
