@@ -17,18 +17,18 @@ const AdminWelcomePage = () => {
         component="h2"
         style={{ textAlign: "center", marginBottom: "20px" }}
       >
-        Bienvenue chez RHFood.
+        Bienvenue dans Medical-Help.
       </Typography>
       <Typography
         variant="body1"
         style={{ fontSize: "20px", textAlign: "center", marginBottom: "20px" }}
       >
-        Améliorez votre journée avec notre plateforme de gestion de restaurant.
-        Découvrez des fonctionnalités magiques pour gérer vos réservations,
-        menus, et données clients.
+        Améliorez votre journée avec notre plateforme médicale. Vous ne
+        trouverez pas de licornes ici, mais des fonctionnalités magiques pour
+        gérer vos rendez-vous, prescriptions et données patients.
       </Typography>
       <Typography variant="h5" sx={{ marginTop: "20px" }}>
-        Ensemble, construisons l&apos;avenir de la restauration !!!
+        Ensemble, construisons l&apos;avenir de la santé!!!
       </Typography>
     </div>
   );
