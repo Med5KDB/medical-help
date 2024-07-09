@@ -4,7 +4,7 @@ import {
   GridView as GridViewIcon,
   Event as EventIcon,
 } from "@mui/icons-material";
-import { resourceToPermissionMapper } from "../../providers/authProvider";
+import { resourceToPermissionMapper } from "../providers/authProvider";
 
 const MedicalHelpResourceItem = ({ name }: { name: string }) => {
   // const { permissions } = usePermissions();

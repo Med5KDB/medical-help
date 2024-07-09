@@ -1,4 +1,4 @@
-import Admin from "./components/admin/Admin";
+import Admin from "./admin/Admin";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();

@@ -7,7 +7,7 @@ import {
   useSidebarState,
 } from "react-admin";
 import { useLocation } from "react-router-dom";
-import BackButton from "../../common/BackButton";
+import BackButton from "../common/BackButton";
 
 const AdminAppBar = (props: AppBarProps) => {
   const [sidebarOpen] = useSidebarState();

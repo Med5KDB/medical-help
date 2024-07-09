@@ -4,7 +4,6 @@ import AdminAppBar from "./AdminAppBar";
 import { AdminMenu } from "./AdminMenu";
 import { useTheme } from "@mui/material";
 
-
 export const AdminLayout = (props: LayoutProps) => {
   const theme = useTheme();
   return (
@@ -22,7 +21,13 @@ export const AdminLayout = (props: LayoutProps) => {
           },
           "& .RaLayout-content": {
             pt: 6,
-          }
+          },
+          "& .RaSidebar-paper, & .MuiDrawer-paper": {
+            background: theme.palette.primary.main,
+            [theme.breakpoints.down("sm")]: {
+              backgroundColor: "#000", // Your desired color for small screens
+            },
+          },
         }}
       />
       <ReactQueryDevtools initialIsOpen={false} />
